@@ -1,11 +1,19 @@
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+import React from "react";
+import TopNavBar from "@/components/Header/TopNavBar";
 
 export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
+        headerStyle: {
+          backgroundColor: "#fff", // Header background
+          height: 100, // Thoda height badha diya taaki clean lage
+          shadowColor: "transparent", // Shadow hatane ke liye (optional)
+        },
+        headerTitleAlign: "left",
         tabBarStyle: {
           backgroundColor: "#000",
           borderTopColor: "#333",
@@ -17,7 +25,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          headerTitle: () => <TopNavBar />,
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" size={size} color={color} />
           ),
