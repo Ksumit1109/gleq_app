@@ -7,7 +7,7 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView>
       <HeroUINativeProvider>
-        <Stack />
+        <Stack screenOptions={{ headerShown: false }} />
       </HeroUINativeProvider>
     </GestureHandlerRootView>
   );
